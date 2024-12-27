@@ -1,4 +1,5 @@
 "use client";
+import LocationMap from "./LocationMap";
 import React, { useState } from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
@@ -127,53 +128,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ darkMode }) => {
           </a>
         </div>
       </div>
-
-      <form onSubmit={handleSubmit} className="flex flex-col w-full lg:w-1/2 gap-4">
-        {error && <p className="text-red-500">{error}</p>}
-        {success && <p className="text-green-500">{success}</p>}
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-          className={`p-3 rounded border ${
-            darkMode
-              ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
-          }`}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          className={`p-3 rounded border ${
-            darkMode
-              ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
-          }`}
-        />
-        <textarea
-          name="message"
-          placeholder="Your message"
-          value={formData.message}
-          onChange={handleChange}
-          className={`p-3 rounded border ${
-            darkMode
-              ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
-          }`}
-          rows={5}
-        />
-        <button
-          type="submit"
-          className="p-3 rounded bg-purple-500 text-white hover:bg-purple-700"
-        >
-          Send me a message →
-        </button>
-      </form>
+      <LocationMap />
     </div>
   );
 };
