@@ -30,7 +30,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ darkMode }) => {
         {/* Lado Esquerdo */}
         <motion.div className="flex flex-col justify-center" variants={variants}>
           <h1 className="text-4xl font-bold mb-4">
-            Hi, I'm <span className="text-purple-500">Ivandro</span>
+            Hi, I&apos;m <span className="text-purple-500">Ivandro</span>
           </h1>
           <p className="text-lg mb-6">Desenvolvedor front-end e entusiasta da inovação</p>
           <p
@@ -59,7 +59,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ darkMode }) => {
                 whileTap={{ scale: 0.9 }}
                 className="px-6 py-2 rounded bg-purple-500 text-white hover:bg-purple-600"
               >
-                Entre em contacto →
+                Entre em contacto &rarr;
               </motion.button>
             </Link>
           </div>
