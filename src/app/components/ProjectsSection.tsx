@@ -41,10 +41,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ darkMode }) => {
       link: "https://agricultura-y.vercel.app/",
     },
     {
-      title: "Baner",
-      description: "Óculos de realidade virtual.",
-      image: "/project/realidade_virtual.png",
-      link: "https://banner-xv1.vercel.app/Mega",
+      title: "Pesquisa por repositório",
+      description: "Faça já a sua pesquisa.",
+      image: "/project/ft-tec.png",
+      link: "https://pesquisa-por-repos.vercel.app/",
     },
   ];
 
