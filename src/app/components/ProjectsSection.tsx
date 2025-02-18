@@ -10,20 +10,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ darkMode }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Quando o componente é montado, rola para o início
     const container = scrollRef.current;
-    let scrollAmount = 0;
-
     if (container) {
-      const scrollInterval = setInterval(() => {
-        if (scrollAmount >= container.scrollWidth - container.clientWidth) {
-          scrollAmount = 0;
-        } else {
-          scrollAmount += 2;
-        }
-        container.scrollTo({ left: scrollAmount, behavior: "smooth" });
-      }, 80);
-
-      return () => clearInterval(scrollInterval);
+      container.scrollTo({ left: 0, behavior: "smooth" }); // Garante que comece do primeiro card
     }
   }, []);
 
@@ -35,10 +25,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ darkMode }) => {
       link: "https://php-feelance.vercel.app/",
     },
     {
-      title: "Agricultura",
-      description: "Construindo o futuro através da tecnologia.",
-      image: "/project/image.png",
-      link: "https://agricultura-y.vercel.app/",
+      title: "Site de Filmes e séries",
+      description: "O site de filmes e séries",
+      image: "/Project/transferir2.jfif",
+      link: "https://cat-logo-de-filmes-e-series.vercel.app/",
     },
     {
       title: "Pesquisa por repositório",
@@ -46,19 +36,27 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ darkMode }) => {
       image: "/project/ft-tec.png",
       link: "https://pesquisa-por-repos.vercel.app/",
     },
+    {
+      title: "Site de filmes", // Novo projeto
+      description: "O melhor site de filmes",
+      image: "/Project/transferir.jfif", // Caminho para a imagem
+      link: "https://site-de-filmes-one.vercel.app/", // Link para o novo projeto
+    },
   ];
 
   return (
     <section
       id="Project"
-      className={`py-10 ${
-        darkMode ? "bg-black text-white" : "bg-gray-100 text-black"
-      }`}
+      className={`py-10 ${darkMode ? "bg-black text-white" : "bg-gray-100 text-black"}`}
     >
       <h2 className="text-3xl font-bold text-center mb-6">My Projects</h2>
       <div
         ref={scrollRef}
         className="flex justify-center items-center space-x-4 overflow-x-auto scrollbar-hide p-4"
+        style={{
+          scrollSnapType: "x mandatory",
+          scrollBehavior: "smooth", // Garantir o scroll suave
+        }}
       >
         {projects.map((project, index) => (
           <a
@@ -66,7 +64,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ darkMode }) => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:scale-105 transition-transform"
+            className="hover:scale-105 transition-transform scroll-snap-start"
           >
             <ProjectCard
               title={project.title}
