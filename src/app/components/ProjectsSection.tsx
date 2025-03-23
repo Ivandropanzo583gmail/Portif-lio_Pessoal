@@ -10,10 +10,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ darkMode }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Quando o componente é montado, rola para o início
+
     const container = scrollRef.current;
     if (container) {
-      container.scrollTo({ left: 0, behavior: "smooth" }); // Garante que comece do primeiro card
+      container.scrollTo({ left: 0, behavior: "smooth" });
     }
   }, []);
 
@@ -25,10 +25,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ darkMode }) => {
       link: "https://php-feelance.vercel.app/",
     },
     {
-      title: "Site de Filmes e séries",
-      description: "O site de filmes e séries",
-      image: "/Project/transferir2.jfif",
-      link: "https://cat-logo-de-filmes-e-series.vercel.app/",
+      title: "Streeming",
+      description: "O melhor app de entretenimento",
+      image: "/Project/icon.gif",
+      link: "https://pn-streeming.vercel.app/",
     },
     {
       title: "Pesquisa por repositório",
@@ -37,10 +37,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ darkMode }) => {
       link: "https://pesquisa-por-repos.vercel.app/",
     },
     {
-      title: "Site de filmes", // Novo projeto
+      title: "Site de filmes",
       description: "O melhor site de filmes",
-      image: "/Project/transferir.jfif", // Caminho para a imagem
-      link: "https://site-de-filmes-one.vercel.app/", // Link para o novo projeto
+      image: "/Project/transferir.jfif", 
+      link: "https://site-de-filmes-one.vercel.app/", 
     },
   ];
 
